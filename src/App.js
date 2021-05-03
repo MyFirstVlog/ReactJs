@@ -24,13 +24,13 @@ function App() {
   //  const [keyword, setKeyword] = useState('Colombia')
 
   return (
-    <StaticContext.Provider value = {{name:'midudev', suscribiteAlCanal:true}}> //tendra acceso a lo interno cuando se active el contexto
+    <StaticContext.Provider value = {{name:'midudev', suscribiteAlCanal:true}}> 
     <div className="App">
       
       <section className="App-content">
         
         <Link to = '/'>
-          <img className="App-logo"src="/k.png"/>
+          <img className="App-logo"src='./k.png'/>
         </Link>
         
         <GifsContextProvider>

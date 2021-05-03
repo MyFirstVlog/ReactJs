@@ -8,12 +8,14 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
+  
 }
 
 .Category-link {
   color: white;
   font-size: 1em;
   transition: color ease-in 0.1s;
+
 }
 
 .Category-link:hover {
