@@ -30,7 +30,7 @@ function App() {
       <section className="App-content">
         
         <Link to = '/'>
-          <img className="App-logo"src='./k.png'/>
+          <img className="App-logo"src='k.png'/>
         </Link>
         
         <GifsContextProvider>
