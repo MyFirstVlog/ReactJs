@@ -2,15 +2,22 @@ import React from 'react';
 import ListOfGifs from '../../components/ListOfGifs';
 import Spinner from '../../components/Spinner';
 import useGifs from '../../hooks/useGifs'
+import useTitle from '../../hooks/useTitle';
 
 
 export default function SearchResults({params}){
     const {keyword} = params   
     const {loading, gifs, setPage, page} = useGifs({keyword}) //custom hooks, logica que qeuremos reutiliazr 
 
+   
+   
+   
     const handleNextPage = () => {
           setPage(prevPage => prevPage + 1)
     }
+
+    /*const title = gifs ? `${gifs.length} resultados de ${keyword}` : ''
+    useTitle({title})*/
      
     /*console.log('este es: ', keyword)
     const [gifs, setGifs ] = useGifs({keyword})
