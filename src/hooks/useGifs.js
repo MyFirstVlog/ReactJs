@@ -4,7 +4,7 @@ import gifsContext from '../context/gifsContext'
 
 const INITIAL_PAGE = 0
 
-export default function useGifs({keyword}= {keyword : null}){
+export default function useGifs({keyword, rating}= {keyword : null}){
 
     const [loading, setLoading] = useState(false)    
 
@@ -20,7 +20,7 @@ export default function useGifs({keyword}= {keyword : null}){
         setLoading(true)
         
         console.log('efecto ejecutado')
-        getGifs({keyword : keywordToUse})
+        getGifs({keyword : keywordToUse,rating})
         .then(gifs => {
             setGifs(gifs)
             setLoading(false)  
@@ -28,14 +28,14 @@ export default function useGifs({keyword}= {keyword : null}){
         })
         //setGifs(diffrentGIFS)    
         
-      },[keyword, setGifs])
+      },[keyword,keywordToUse, setGifs, rating])
 
       useEffect(function (){
 
         if(page === INITIAL_PAGE)
         return
         setLoadingPage(true)
-        getGifs({keyword: keywordToUse, page:page})
+        getGifs({keyword: keywordToUse,rating , page:page})
         .then(nextGifs =>{
             setGifs(prevGifs => prevGifs.concat(nextGifs)) //estados anteriore y nuevos
             setLoadingPage(false)

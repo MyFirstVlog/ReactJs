@@ -12,25 +12,22 @@ import SearchForm from '../../components/SearchForm'
 
 export default function Home(){
    
-    const [path, pushLocation] = useLocation()
-
-
-    const {loading, gifs} = useGifs()
-     
     
 
 
-    const handleSubmit = useCallback(({keyword}) =>{        
-        pushLocation(`/search/${keyword}`)
-        //navegar
-    },[pushLocation]) //guarda la funcion para que en el render no se tenga que 
+    const { gifs} = useGifs()    
+
+
+    //guarda la funcion para que en el render no se tenga que 
     //volver a crear , y solo cambia cuando alguna dependencia de ella es meodifcada
 
     
 
     return (
         <>
-       <SearchForm onSubmit={handleSubmit} />
+        <header className = "o-header">
+       <SearchForm />
+       </header>
       <div className="App-main">
         <div className="App-results">
           <h3 className="App-title">Última búsqueda</h3>

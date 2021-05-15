@@ -3,11 +3,11 @@ import ListOfGifs from '../../components/ListOfGifs';
 import Spinner from '../../components/Spinner';
 import useGifs from '../../hooks/useGifs'
 import useTitle from '../../hooks/useTitle';
-
+import SearchForm from '../../components/SearchForm'
 
 export default function SearchResults({params}){
-    const {keyword} = params   
-    const {loading, gifs, setPage, page} = useGifs({keyword}) //custom hooks, logica que qeuremos reutiliazr 
+    const {keyword, rating='g'} = params   
+    const {loading, gifs, setPage, page} = useGifs({keyword,rating}) //custom hooks, logica que qeuremos reutiliazr 
 
    
    
@@ -38,6 +38,9 @@ export default function SearchResults({params}){
     return <>
             {
                 loading ? <Spinner/> :<> 
+                <header className = "o-header">
+                <SearchForm initialKeyword = {keyword} initialRating = {rating}/>
+                </header>
                 <ListOfGifs gifs = {gifs} /> 
                 <button onClick = {handleNextPage}>Get next Page </button>
                 </> 

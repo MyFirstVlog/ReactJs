@@ -28,6 +28,23 @@
   text-align: left;
 }
 
+.btn {
+  border: 1px solid transparent;
+  padding: .5rem 1rem;
+  background-color:rgba(238, 130, 238, 0.276);
+  color: rgba(211, 247, 247, 0.797);
+  cursor: pointer;
+  font-size: 1rem;
+
+}
+.btn[disabled]{
+  opacity: .3;
+  pointer-events: none;
+}
+
+.btn:hover{
+  background-color: rgba(238, 130, 238, 0.803);
+}
 /*----------*/
 
 .App-main {
